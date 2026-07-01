@@ -38,8 +38,8 @@ from The Open Group.
 #include "exevents.h"
 #include "lorie.h"
 
-#define XI_PEN	"TERMUX-X11 PEN"
-#define XI_ERASER	"TERMUX-X11 ERASER"
+#define XI_PEN	"CLANDRO-X11 PEN"
+#define XI_ERASER	"CLANDRO-X11 ERASER"
 
 __unused DeviceIntPtr lorieMouse, lorieTouch, lorieKeyboard, loriePen, lorieEraser;
 

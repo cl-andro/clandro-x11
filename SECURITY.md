@@ -1,1 +1,1 @@
-Check https://termux.dev/security for info on Termux security policies and how to report vulnerabilities.
+Please report security vulnerabilities at https://github.com/cl-andro/clandro-pkg/discussions

@@ -6,9 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        This is a bug tracker of the official Termux:X11. 
-        Please do not report issues of third-party software there, but ask in [Termux Packages GitHub Discussions](https://github.com/termux/termux-packages/discussions) or [Community Social Media](https://wiki.termux.com/wiki/Community) instead. 
-        Also you can ask questions in [Discord](https://discord.gg/termux-641256914684084234).
+        This is a bug tracker of the official Clandro:X11. 
+        Please do not report issues of third-party software there, but ask in [Clandro Packages GitHub Discussions](https://github.com/cl-andro/clandro-packages/discussions) or [Community Social Media](https://wiki.clandro.com/wiki/Community) instead. 
+        Also you can ask questions in [Discord](https://discord.gg/clandro-641256914684084234).
         Use search to check whether your issue has been already reported and perhaps solved.
 
         Android versions below 8.x are not supported.
@@ -20,9 +20,9 @@ body:
         Be patient, do not expect that issue could get resolved immediately.
         
         ### Logs
-        If you need to obtain logs from the `com.termux.x11` application,
-        set the `TERMUX_X11_DEBUG` environment variable to 1, like this:
-        `TERMUX_X11_DEBUG=1 termux-x11 :0`
+        If you need to obtain logs from the `com.clandro.x11` application,
+        set the `CLANDRO_X11_DEBUG` environment variable to 1, like this:
+        `CLANDRO_X11_DEBUG=1 clandro-x11 :0`
 
   - type: textarea
     attributes:

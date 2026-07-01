@@ -225,10 +225,10 @@ void ddxReady(void) {
     pScreenPtr->DisplayCursor(lorieMouse, pScreenPtr, rootCursor);
     if (NoListenAll)
         return;
-    if (xstartup && !strlen(xstartup)) // allow overriding $TERMUX_X11_XSTARTUP with empty xstartup arg
+    if (xstartup && !strlen(xstartup)) // allow overriding $CLANDRO_X11_XSTARTUP with empty xstartup arg
         return;
     if (!xstartup || !strlen(xstartup))
-        xstartup = getenv("TERMUX_X11_XSTARTUP");
+        xstartup = getenv("CLANDRO_X11_XSTARTUP");
     if (!xstartup || !strlen(xstartup))
         return;
 
@@ -782,7 +782,7 @@ Bool loriePresentFlip(__unused RRCrtcPtr crtc, __unused uint64_t event_id, __unu
         return FALSE;
 
     const LorieBuffer_Desc *desc = LorieBuffer_description(priv->buffer);
-    char *forceFlip = getenv("TERMUX_X11_FORCE_FLIP");
+    char *forceFlip = getenv("CLANDRO_X11_FORCE_FLIP");
     if (desc->type == LORIEBUFFER_FD && priv->imported && !(forceFlip && strcmp(forceFlip, "1") == 0))
         return FALSE; // For some reason it does not work fine with turnip.
 

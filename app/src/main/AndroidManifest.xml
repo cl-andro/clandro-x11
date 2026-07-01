@@ -53,7 +53,7 @@
 
         <service android:name=".utils.KeyInterceptor"
             android:exported="true"
-            android:label="Termux:X11 KeyInterceptor"
+            android:label="Clandro:X11 KeyInterceptor"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
@@ -66,11 +66,11 @@
 
         <receiver android:name=".LoriePreferences$Receiver" android:exported="true" tools:ignore="ExportedReceiver" android:enabled="true">
             <intent-filter>
-                <action android:name="com.termux.x11.CHANGE_PREFERENCE" />
+                <action android:name="com.clandro.x11.CHANGE_PREFERENCE" />
             </intent-filter>
         </receiver>
     </application>
     <queries>
-        <package android:name="com.termux" />
+        <package android:name="com.clandro" />
     </queries>
 </manifest>

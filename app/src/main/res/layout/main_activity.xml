@@ -18,7 +18,7 @@
         android:paddingBottom="0dp"
         android:background="@android:color/black">
 
-        <com.termux.x11.LorieView
+        <com.clandro.x11.LorieView
             android:id="@+id/lorieView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -276,7 +276,7 @@
         android:layout_gravity="bottom|center"/>
 
     <View
-        android:id="@+id/activity_termux_bottom_space_view"
+        android:id="@+id/activity_clandro_bottom_space_view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/transparent"
