@@ -1,0 +1,59 @@
+name: Build and Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build clandro-x11 APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+          fetch-depth: 1
+
+      - name: Java setup
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Restore cache
+        uses: actions/cache@v6
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            .git/modules
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '.gitmodules') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Fetch submodules
+        run: git submodule update --init --recursive --jobs 8 --depth 1
+
+      - name: Build
+        run: ./gradlew assembleDebug
+
+      - name: Build companion package
+        run: ./build_clandro_package
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          files: |
+            ./app/build/outputs/apk/debug/app-*-debug.apk
+            ./app/build/outputs/apk/debug/clandro-x11-*-all.deb
+            ./app/build/outputs/apk/debug/clandro-x11-*-any.pkg.tar.xz
